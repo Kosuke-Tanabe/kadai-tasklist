@@ -3,19 +3,19 @@ package models.validators;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Message;
+import models.Task;
 
-public class MessageValidator {
+public class TaskValidator {
     // バリデーションを実行する
-    public static List<String> validate(Message m) {
+    public static List<String> validate(Task t) {
         List<String> errors = new ArrayList<String>();
 
-        String title_error = validateTitle(m.getTitle());
+        String title_error = validateTitle(t.getTitle());
         if(!title_error.equals("")) {
             errors.add(title_error);
         }
 
-        String content_errors = validateContent(m.getContent());
+        String content_errors = validateContent(t.getContent());
         if(!content_errors.equals("")) {
             errors.add(content_errors);
         }

@@ -4,33 +4,33 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <c:choose>
-            <c:when test="${message != null}">
+            <c:when test="${task != null}">
 
-                <h2>id : ${message.id}のメッセージ詳細ページ</h2>
+                <h2>id : ${task.id}のメッセージ詳細ページ</h2>
 
                 <table>
                     <tboby>
                        <tr>
                           <th>タイトル</th>
-                          <td><c:out value="${message.title}" /></td>
+                          <td><c:out value="${task.title}" /></td>
                        </tr>
                        <tr>
                           <th>メッセージ</th>
-                          <td><c:out value="${message.content}" /></td>
+                          <td><c:out value="${task.content}" /></td>
                        </tr>
                        <tr>
                           <th>作成日時</th>
-                          <td><fmt:formatDate value="${message.create_at}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                          <td><fmt:formatDate value="${task.create_at}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
                        </tr>
                        <tr>
                         <th>更新日時</th>
-                        <td><fmt:formatDate value="${message.update_at}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                        <td><fmt:formatDate value="${task.update_at}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
                        </tr>
                     </tboby>
                 </table>
 
                 <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
-                <p><a href="${pageContext.request.contextPath}/edit?id=${message.id}">このメッセージを編集する</a></p>
+                <p><a href="${pageContext.request.contextPath}/edit?id=${task.id}">このメッセージを編集する</a></p>
             </c:when>
                 <c:otherwise>
                     <h2>お探しのデータは見つかりませんでした。</h2>

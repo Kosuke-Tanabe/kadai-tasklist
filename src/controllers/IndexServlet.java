@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Message;
+import models.Task;
 import utils.DBUtil;
 
 /**
@@ -43,18 +43,18 @@ public class IndexServlet extends HttpServlet {
             // TODO: handle exception
         }
 
-        List<Message> messages = em.createNamedQuery("getAllMessages", Message.class)
+        List<Task> tasks = em.createNamedQuery("getAllTasks", Task.class)
                                                         .setFirstResult(15 * (page - 1))
                                                         .setMaxResults(15)
                                                         .getResultList();
 
         // 全件数を取得
-        long messages_count = (long)em.createNamedQuery("getMessagesCount", Long.class).getSingleResult();
+        long tasks_count = (long)em.createNamedQuery("getTasksCount", Long.class).getSingleResult();
 
         em.close();
 
-        request.setAttribute("messages", messages);
-        request.setAttribute("messages_count", messages_count);
+        request.setAttribute("tasks", tasks);
+        request.setAttribute("tasks_count", tasks_count);
         request.setAttribute("page", page);
 
 
@@ -66,7 +66,7 @@ public class IndexServlet extends HttpServlet {
         }
 
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/messages/index.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasks/index.jsp");
         rd.forward(request, response);
     }
 

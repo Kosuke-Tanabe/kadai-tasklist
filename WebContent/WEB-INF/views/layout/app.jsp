@@ -11,13 +11,13 @@
     <body>
         <div id="wrapper">
             <div id="header">
-                <h1>メッセージボード アプリケーション</h1>
+                <h1>タスクリスト 一覧</h1>
             </div>
             <div id="content">
                 ${param.content}
             </div>
             <div id="footer">
-                by Taro Kirameki.
+                by Task List.
             </div>
         </div>
     </body>
