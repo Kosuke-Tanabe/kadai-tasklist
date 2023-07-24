@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Task;
+import models.Tasks;
 import models.validators.TaskValidator;
 import utils.DBUtil;
 
@@ -42,7 +42,7 @@ public class UpdateServlet extends HttpServlet {
             EntityManager em = DBUtil.createEntityManager();
 
             // 該当の１件のみを取得
-            Task m = em.find(Task.class, (Integer) (request.getSession().getAttribute("task_id")));
+            Tasks m = em.find(Tasks.class, (Integer) (request.getSession().getAttribute("task_id")));
 
             // フォームの内容を各フィールドに上書き
             String title = request.getParameter("title");

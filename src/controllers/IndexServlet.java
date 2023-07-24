@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Task;
+import models.Tasks;
 import utils.DBUtil;
 
 /**
@@ -43,7 +43,7 @@ public class IndexServlet extends HttpServlet {
             // TODO: handle exception
         }
 
-        List<Task> tasks = em.createNamedQuery("getAllTasks", Task.class)
+        List<Tasks> tasks = em.createNamedQuery("getAllTasks", Tasks.class)
                                                         .setFirstResult(15 * (page - 1))
                                                         .setMaxResults(15)
                                                         .getResultList();

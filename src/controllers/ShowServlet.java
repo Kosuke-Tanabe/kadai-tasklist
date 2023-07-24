@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Task;
+import models.Tasks;
 import utils.DBUtil;
 
 /**
@@ -36,7 +36,7 @@ public class ShowServlet extends HttpServlet {
         EntityManager em = DBUtil.createEntityManager();
 
         // 1件のみを取得
-        Task m = em.find(Task.class, Integer.parseInt(request.getParameter("id")));
+        Tasks m = em.find(Tasks.class, Integer.parseInt(request.getParameter("id")));
 
         em.close();
 
