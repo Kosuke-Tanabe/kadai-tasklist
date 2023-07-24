@@ -58,7 +58,7 @@ public class IndexServlet extends HttpServlet {
         request.setAttribute("page", page);
 
 
-        // フラッシュメッセージがセッションスコープにセットされていたら
+        // フラッシュがセッションスコープにセットされていたら
         // リクエストスコープに保存する(セッションスコープからは削除)
         if (request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));
