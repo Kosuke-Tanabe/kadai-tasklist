@@ -23,10 +23,10 @@ import javax.persistence.Table;
         )
 })
 
-@Table(name = "task")
+@Table(name = "tasks")
 public class Tasks {
     @Id
-    @Column(name = "Id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
